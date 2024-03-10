@@ -24,7 +24,7 @@ class Operations:
         return dot_product / norm_product
     
     @staticmethod
-    def process_canvas(canvas) -> np.ndarray:
+    def process_canvas(image_data) -> np.ndarray:
         """Convert a four-channel canvas image to 1 channel.
 
         Args:
@@ -33,7 +33,7 @@ class Operations:
         Returns:
             np.ndarray: Numpy array representation
         """        
-        img = Image.fromarray(canvas.image_data)
+        img = Image.fromarray(image_data)
         one_channel_img = np.array(img.convert("L"))
         # Turn white pixels into black and viceversa.
         return 255 - one_channel_img

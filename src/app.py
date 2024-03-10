@@ -17,7 +17,7 @@ def calculate_similarity(canvas, image_option: int) -> Tuple[float, str]:
     Returns:
         Tuple[float, str]: Tuple with cosine similarity score and a label equivalent either to: Excellent, Good or Bad.
     """       
-    processed_canvas = Operations.process_canvas(canvas)
+    processed_canvas = Operations.process_canvas(canvas.image_data)
     original_image = np.array(numbers_dict.get(image_option))
     similarity: float =  Operations.cosine_similarity(original_image, processed_canvas)
     similarity = round(similarity, 4)
