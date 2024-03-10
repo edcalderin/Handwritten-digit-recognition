@@ -1,0 +1,54 @@
+import streamlit as st
+from PIL import Image
+from streamlit_drawable_canvas import st_canvas
+import numpy as np
+from pathlib import Path
+from array_numbers import numbers_dict
+from operations import Operations
+
+def calculate_similarity(canvas, image_option) -> float:
+    processed_canvas = Operations.process_canvas(canvas)
+    original_image = np.array(numbers_dict.get(image_option))
+    similarity: float =  Operations.cosine_similarity(original_image, processed_canvas)
+    return round(similarity, 4)
+
+def main():
+    st.title("Handwritten Number Detector")
+
+    image_option = st.selectbox(
+        "Choose a number",
+        list(range(10)),
+        help="Select a number to display its image."
+    )
+
+    selected_image = Path("images/numbers").joinpath(f"{image_option}.png")
+    image = Image.open(selected_image)
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+    
+    with col1:
+        st.write("Draw the number:")
+        canvas = st_canvas(
+            fill_color="black", 
+            stroke_width=10,  
+            stroke_color="rgb(0, 0, 0)",  
+            background_color="white",
+            update_streamlit=True,  
+            height=150,
+            width=150,
+            drawing_mode="freedraw",
+            display_toolbar=True,
+            key="canvas",
+        )
+
+    with col2:
+        st.write("Selected number:")
+        st.image(image, caption='Selected number', use_column_width="never", width=150)
+
+    with col3:
+        if st.button("Verify"):
+            st.write("Computation Result:")
+            st.write(calculate_similarity(canvas, image_option))
+
+if __name__ == "__main__":
+    main()
