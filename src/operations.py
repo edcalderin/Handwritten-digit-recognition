@@ -2,10 +2,11 @@ import numpy as np
 from PIL import Image
 
 class Operations:
+    """Class with isolated methods to process data."""
     
     @staticmethod
     def cosine_similarity(matrix_1: np.ndarray, matrix_2: np.ndarray) -> float:
-        """Calculate the cosine similarity
+        """Calculate the cosine similarity score.
 
         Args:
             matrix_1 (np.ndarray): Bi-dimensional Numpy array
@@ -20,13 +21,15 @@ class Operations:
     
     @staticmethod
     def process_canvas(canvas) -> np.ndarray:
-        """Convert a drawable canvas to one-channel image
+        """Convert a four-channel canvas image to 1 channel.
 
         Args:
-            canvas: Canvas
+            canvas: Drawable canvas by user.
 
         Returns:
             np.ndarray: Numpy array representation
         """        
         img = Image.fromarray(canvas.image_data)
-        return 255 - np.array(img.convert("L"))
+        one_channel_img = np.array(img.convert("L"))
+        # Turn white pixels into black and viceversa.
+        return 255 - one_channel_img

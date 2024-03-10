@@ -1,3 +1,4 @@
+from typing import Tuple
 import streamlit as st
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
@@ -6,12 +7,29 @@ from pathlib import Path
 from array_numbers import numbers_dict
 from operations import Operations
 
-def calculate_similarity(canvas, image_option) -> float:
+def calculate_similarity(canvas, image_option: int) -> Tuple[float, str]:
+    """Process cosine similarity and return a formal representation according the score.
+
+    Args:
+        canvas (_type_): Drawable canvas by user.
+        image_option (int): Selected image option between 0 and 9.
+
+    Returns:
+        Tuple[float, str]: Tuple with cosine similarity score and a label equivalent either to: Excellent, Good or Bad.
+    """       
     processed_canvas = Operations.process_canvas(canvas)
     original_image = np.array(numbers_dict.get(image_option))
     similarity: float =  Operations.cosine_similarity(original_image, processed_canvas)
-    return round(similarity, 4)
-
+    similarity = round(similarity, 4)
+    
+    label: str = 'Bad'
+    if similarity > 0.7:
+        label = 'Excellent'
+    elif similarity > 0.4:
+        label = 'Good'
+    
+    return similarity, label
+    
 def main():
     st.title("Handwritten Number Detector")
 
