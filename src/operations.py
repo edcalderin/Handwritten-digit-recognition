@@ -17,6 +17,10 @@ class Operations:
         """        
         dot_product: float = np.dot(matrix_1.flatten(), matrix_2.flatten())
         norm_product: float = np.linalg.norm(matrix_1) * np.linalg.norm(matrix_2)
+        
+        # If user did not drawed on the canvas area
+        if norm_product == 0:
+            return 0
         return dot_product / norm_product
     
     @staticmethod

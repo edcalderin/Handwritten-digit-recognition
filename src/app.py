@@ -8,7 +8,7 @@ from array_numbers import numbers_dict
 from operations import Operations
 
 def calculate_similarity(canvas, image_option: int) -> Tuple[float, str]:
-    """Process cosine similarity and return a formal representation according the score.
+    """Process cosine similarity and return a label representation according the score.
 
     Args:
         canvas (_type_): Drawable canvas by user.
@@ -30,13 +30,17 @@ def calculate_similarity(canvas, image_option: int) -> Tuple[float, str]:
     
     return similarity, label
     
+def onchange_select():
+    st.session_state.canvas_data = None
+
 def main():
     st.title("Handwritten Number Detector")
 
     image_option = st.selectbox(
         "Choose a number",
         list(range(10)),
-        help="Select a number to display its image."
+        help="Select a number to display its image.",
+        on_change=onchange_select
     )
 
     selected_image = Path("images/numbers").joinpath(f"{image_option}.png")
@@ -56,7 +60,7 @@ def main():
             width=150,
             drawing_mode="freedraw",
             display_toolbar=True,
-            key="canvas",
+            key="canvas"
         )
 
     with col2:
@@ -64,9 +68,10 @@ def main():
         st.image(image, caption='Selected number', use_column_width="never", width=150)
 
     with col3:
-        if st.button("Verify"):
-            st.write("Computation Result:")
-            st.write(calculate_similarity(canvas, image_option))
+        if st.button("Compare"):
+            score, label = calculate_similarity(canvas, image_option)
+            st.subheader(label)
+            st.markdown(f"Score: {score}")
 
 if __name__ == "__main__":
     main()
