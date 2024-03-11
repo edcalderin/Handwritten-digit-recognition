@@ -1,4 +1,4 @@
-# Handwritten Digit recognition with Cosine Similarity
+# Handwritten Digit Recognition with Cosine Similarity
 
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
@@ -26,11 +26,11 @@ Text about this topic
 
 ```
 .
-├── images
-│   └── digits
-├── src
-│   └── array_digits
-└── tests
+├── images              # Assets for the project
+│   └── digits          # Images of digits from 0 to 9
+├── src                 # Source python files
+│   └── array_digits    # Directory containing Python files representing arrays of digits (0.py to 9.py)
+└── tests               # Test files
 
 5 directories
 ```
