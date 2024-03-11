@@ -20,7 +20,8 @@ In this project, I introduce a different and naive approach to the popular probl
 
 The metric is calculated by measuring the similarity between two vectors and corresponds to the following formula:
 
-$$ \cos(\theta) = \frac{\sum_{i=1}^{n} A_iB_i}{\sqrt{\sum_{i=1}^{n}A_i^2} \cdot \sqrt{\sum_{i=1}^{n}B_i^2}} $$
+$$ \cos(\theta) = \frac{\sum_{i=0}^{n} A_i B_i}{\sqrt{\sum_{i=0}^{n} A_i^2} \cdot \sqrt{\sum_{i=0}^{n} B_i^2}} $$
+
 
 Where *A* and *B* represents bi-dimensional arrays; the digit drawn by the user and the original digit intended to be the expected figure, these can be placed interchangeably in the formula.
 
