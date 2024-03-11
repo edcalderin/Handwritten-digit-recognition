@@ -1,9 +1,8 @@
 import numpy as np
 
-from src.operations import Operations
 from src.array_digits import digits_dict
 from src.label_scores import LabelScores
-from PIL import Image
+from src.operations import Operations
 
 operations = Operations()
 
@@ -44,7 +43,7 @@ class TestProcessCanvas:
         assert result.shape == input_shape
 
 class TestCalculateSimilarity:
-    
+
     def test_case_excellent(self):
         digit: int = np.random.randint(0, 9)
         array_digit = np.array(digits_dict[digit], dtype='uint8')
@@ -53,16 +52,16 @@ class TestCalculateSimilarity:
         array_digit = 255 - array_digit
 
         score, label = operations.calculate_similarity(array_digit, digit)
-    
+
         assert score == 1
         assert label == LabelScores.EXCELLENT.value
-    
+
     def test_case_bad(self):
         digit: int = np.random.randint(0, 9)
         array_digit = np.array(digits_dict[digit])
         image = np.ones((*array_digit.shape, 3), dtype='uint8') * 255
 
         score, label = operations.calculate_similarity(image, digit)
-    
+
         assert score == 0
         assert label == LabelScores.BAD.value
