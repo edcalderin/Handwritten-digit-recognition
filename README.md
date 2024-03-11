@@ -2,10 +2,10 @@
 
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-![Alt text](./images/cover.jpg)
-<p align="center">
-  <i>Image credits: <a href='https://aigeekprogrammer.com/keras-python-mnist-handwritten-digit-recognition/'>AI Geek Programmer article</a></i>
-</p>
+![Cover image](./images/cover.jpg)
+<center>
+_Image credits: <a href='https://aigeekprogrammer.com/keras-python-mnist-handwritten-digit-recognition/'>AI Geek Programmer article</a>_
+</center>
 
 ## Table of Contents
 
@@ -19,6 +19,10 @@
 ## Problem statement
 
 Brief problem statement
+
+### Cosine similarity
+
+Text about this topic
 
 ## Directory layout
 
@@ -35,11 +39,17 @@ Brief problem statement
 
 ## Running the app with Docker (Recommended)
 
-1. `git clone https://github.com/edcalderin/Handwritten-digit-recognition.git` 
-2. `docker build -t digit-recognition .` 
-3. `docker run -it --rm -p 8501:8501 digit-recognition`
+1. Clone the repository:
+```bash
+git clone https://github.com/edcalderin/Handwritten-digit-recognition.git
+```
+2. Build and run the docker image:
+```bash
+docker build -t digit-recognition .
+docker run -it --rm -p 8501:8501 digit-recognition
+```
 
-Go to `http://localhost:8501`
+3. Go to `http://localhost:8501`
 
 The output should look like this:
 
@@ -47,14 +57,30 @@ The output should look like this:
 
 ## Running the app manually
 
-> :memo: You will need **Python 3.12** installed on your system in order to reproduce this app manually.
+> :warning: You will need **Python 3.12** installed on your system in order to reproduce this app manually.
+
 Run the following commands from root project directory:
 
-1. `git clone https://github.com/edcalderin/Handwritten-digit-recognition.git`
-2. `pip install poetry`
-3. `poetry shell`
-4. `poetry install`
-5. `streamlit run src/app.py`
+1. Clone the repository:
+```bash
+git clone https://github.com/edcalderin/Handwritten-digit-recognition.git
+```
+2. Install Poetry (Skip this if you already installed it)
+```bash
+pip install poetry
+```
+3. Create and activate environment:
+```bash
+poetry shell
+```
+4. Install dependencies:
+```bash
+poetry install
+```
+5. Run the streamlit command:
+```bash
+streamlit run src/app.py
+```
 6. Go to `http://localhost:8501`
 
 ## Checkpoints
