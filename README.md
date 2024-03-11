@@ -11,6 +11,7 @@
 * [Directory layout](#directory-layout)
 * [Running the app with Docker (Recommended)](#running-the-app-with-docker-recommended)
 * [Running the app manually](#running-the-app-manually)
+* [Quality code](#quality-code)
 * [Checkpoints](#checkpoints)
 * [References](#references)
 
@@ -54,7 +55,9 @@ The applications of the cosine similarity extend beyond simple array comparision
 ```bash
 git clone https://github.com/edcalderin/Handwritten-digit-recognition.git
 ```
-2. Build and run the docker image:
+2. Start Docker Desktop
+
+3. Build and run the docker image:
 ```bash
 docker build -t digit-recognition .
 docker run -it --rm -p 8501:8501 digit-recognition
@@ -86,9 +89,24 @@ poetry install
 ```
 5. Run the streamlit command:
 ```bash
-streamlit run src/app.py
+python -m streamlit run src/app.py
 ```
 6. Go to `http://localhost:8501`
+
+## Quality code
+
+This project used `ruff` and `pytest` to ensure the quality code:
+
+* Linter:
+```bash
+ruff check .
+```
+
+* Tests:
+```bash
+python -m pytest tests
+```
+
 
 ## Checkpoints
 

@@ -31,4 +31,5 @@ select = [
 convention = "pep257"
 
 [lint.per-file-ignores]
-"src/array_numbers/*" = ["E501"]
+"src/array_digits/*" = ["E501"]
+"tests/*" = ["S101"]

@@ -23,4 +23,4 @@ COPY images/numbers ./images/numbers
 
 EXPOSE 8501
 
-ENTRYPOINT ["streamlit", "run", "src/app.py"]
+ENTRYPOINT ["python", "-m", "streamlit", "run", "src/app.py"]
