@@ -3,7 +3,7 @@ from typing import Tuple
 
 import numpy as np
 import streamlit as st
-from array_numbers import numbers_dict
+from array_digits import digits_dict
 from label_scores import LabelScores
 from operations import Operations
 from PIL import Image
@@ -23,7 +23,7 @@ def calculate_similarity(image_data: np.ndarray,
         corresponding to one of the following categories: Excellent, Good or Bad.
     """
     processed_canvas = Operations.process_canvas(image_data)
-    original_image = np.array(numbers_dict.get(image_option))
+    original_image = np.array(digits_dict.get(image_option))
     similarity: float =  Operations.cosine_similarity(original_image, processed_canvas)
     similarity = round(similarity, 4)
 
@@ -36,23 +36,24 @@ def calculate_similarity(image_data: np.ndarray,
     return similarity, label.value
 
 def main():
-    st.title("Handwritten Number Detector")
+    st.set_page_config('Digit recognition')
+    st.title("Handwritten Digit Recognition")
 
     image_option = st.selectbox(
-        "Choose a number",
+        "Choose a digit",
         list(range(10)),
-        help="Select a number to display its image."
+        help="Select a digit to display its image."
     )
 
-    selected_image = Path("images", "numbers").joinpath(f"{image_option}.png")
+    selected_image = Path("images", "digits").joinpath(f"{image_option}.png")
     image = Image.open(selected_image)
 
     col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
-        st.write("Draw the number:")
+        st.write("Draw the digit:")
         canvas = st_canvas(
-            fill_color="lightblue",  # Change fill color
+            fill_color="black",
             stroke_width=10,
             stroke_color="rgb(0, 0, 0)",
             background_color="white",
@@ -65,8 +66,8 @@ def main():
         )
 
     with col2:
-        st.write("Selected number:")
-        st.image(image, caption='Selected number', use_column_width="never", width=150)
+        st.write("Selected digit:")
+        st.image(image, caption='Selected digit', use_column_width="never", width=150)
 
     with col3:
         if st.button("Compare"):

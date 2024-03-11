@@ -1,1 +1,1 @@
-# Handwritten Number detector
+# Handwritten Digit recognition with Cosine Similarity

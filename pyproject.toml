@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "handwritten-number-detector"
+name = "handwritten-digit-recognition"
 version = "0.1.0"
 description = ""
 authors = ["Erick Calderin"]

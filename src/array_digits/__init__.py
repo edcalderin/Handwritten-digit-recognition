@@ -9,7 +9,7 @@ from .three import three
 from .two import two
 from .zero import zero
 
-numbers_dict = {
+digits_dict = {
     0: zero,
     1: one,
     2: two,
@@ -22,4 +22,4 @@ numbers_dict = {
     9: nine
 }
 
-__all__ = numbers_dict
+__all__ = digits_dict
