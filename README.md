@@ -29,7 +29,7 @@ Text about this topic
 ├── images              # Assets for the project
 │   └── digits          # Images of digits from 0 to 9
 ├── src                 # Source python files
-│   └── array_digits    # Directory containing Python files representing arrays of digits (0.py to 9.py)
+│   └── array_digits    # Directory with files representing arrays of digits (zero.py to nine.py)
 └── tests               # Test files
 
 5 directories
