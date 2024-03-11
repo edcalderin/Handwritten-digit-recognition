@@ -16,22 +16,24 @@
 
 ## Problem statement
 
-In this project, I introduce a different and naive approach to the popular problem of handwritten digit recognition, which is widely used in Machine Learning and Convolutional Neural Network by enthusiasts who start in this area. Maybe it is unnecesary to describe the idea behind as you have probably read, seen or implemented this kind of problems on your own, but in this opportunity I decided go through an algebraic solution to identify digits written by hand employing the cosine similarity metric [(See on references)](#references). 
+In this project, I introduce a different and naive approach to the popular problem of handwritten digit recognition, widely used in Machine Learning and Convolutional Neural Network by enthusiasts who start in this field. Maybe it is unnecesary to describe the idea behind as you have probably read, seen or implemented this kind of problems on your own, but in this opportunity I decided go through an algebraic solution to identify digits written by hand making usage of the cosine similarity metric [(See on references)](#references). 
 
 The metric is calculated by measuring the similarity between two vectors and corresponds to the following formula:
 
-$$\cos(\theta) = { \sum_{i=0}^{n} {A_i B_i} \over \sqrt{\sum_{i=0}^{n} {A_i^2}} \sqrt{\sum_{i=0}^{n} {B_i^2}}} $$
+$$ cos(\theta) = { 
+    \sum\limits_{i=0}^{n-1} A_iB_i
+    \over 
+    \sqrt{\sum\limits_{i=0}^{n-1} {A_i^2}} \sqrt{\sum\limits_{i=0}^{n-1} {B_i^2}}
+}
+$$
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+Where *A* and *B* represents bi-dimensional arrays, denoting the digit drawn by the user and the original digit intended to be the expected figure, respectively. Though these can interchanged in the formula.
 
-
-Where *A* and *B* represents bi-dimensional arrays; the digit drawn by the user and the original digit intended to be the expected figure, these can be placed interchangeably in the formula.
-
-I have designed a minimal yet functional Streamlit application to expose this algorithm: The user pick a number from a select box and draw the number selected afterwards. The output will after press the `Compare` button. I also created three categories depending on the score: **Excellent** (`score > .7`), **Good** (`score > .4`) and **Incorrect** (`score < .4`) 
+I have designed a minimal yet functional Streamlit application to showcase this algorithm: Users select a number from a dropdown menu and then proceed to draw the selected number. The result will appear after press the `Compare` button. Additionally, I have categorized the results into three groups based on the score: **Excellent** (`score > 0.7`), **Good** (`score > 0.4`) and **Incorrect** (`score < 0.4`) 
 
 ![Alt text](./images/code_gif.gif)
 
-The applications of the cosine similarity go beyond of a simple array comparition, it is mostly used in Large Languaje Models, Recommender Systems, Information Retrieval and so on, so you can still leverage its potential to develop a great variety of projects.
+The applications of the cosine similarity extend beyond simple array comparisions, it is predominantly used in Large Languaje Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
 
 ## Directory layout
 
