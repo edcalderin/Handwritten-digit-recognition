@@ -16,11 +16,19 @@
 
 ## Problem statement
 
-Brief problem statement
+In this project, I introduce a different and naive approach to the popular problem of handwritten digit recognition, which is widely used in Machine Learning and Convolutional Neural Network by enthusiasts who start in this area. Maybe it is unnecesary to describe the idea behind as you have probably read, seen or implemented this kind of problems on your own, but in this opportunity I decided go through an algebraic solution to identify digits written by hand employing the cosine similarity metric [(See on references)](#references). 
 
-### Cosine similarity
+The metric is calculated by measuring the similarity between two vectors and corresponds to the following formula:
 
-Text about this topic
+$$ cos(\theta) = {\sum_{i=0}^{n} A_iB_i \over  {\sqrt{\sum_{i=0}^{n}A_i^2}}\sqrt{\sum_{i=0}^{n}B_i^2}} $$
+
+Where *A* and *B* represents bi-dimensional arrays; the digit drawn by the user and the original digit intended to be the expected figure, these can be placed interchangeably in the formula.
+
+I have designed a minimal yet functional Streamlit application to expose this algorithm: The user pick a number from a select box and draw the number selected afterwards. The output will after press the `Compare` button. I also created three categories depending on the score: **Excellent** (`score > .7`), **Good** (`score > .4`) and **Incorrect** (`score < .4`) 
+
+![Alt text](./images/code_gif.gif)
+
+The applications of the cosine similarity go beyond of a simple array comparition, it is mostly used in Large Languaje Models, Recommender Systems, Information Retrieval and so on, so you can still leverage its potential to develop a great variety of projects.
 
 ## Directory layout
 
@@ -48,10 +56,6 @@ docker run -it --rm -p 8501:8501 digit-recognition
 ```
 
 3. Go to `http://localhost:8501`
-
-The output should look like this:
-
-![Alt text](./images/code_gif.gif)
 
 ## Running the app manually
 
