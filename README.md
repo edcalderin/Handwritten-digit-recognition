@@ -22,6 +22,8 @@ The metric is calculated by measuring the similarity between two vectors and cor
 
 $$\cos(\theta) = { \sum_{i=0}^{n} {A_i B_i} \over \sqrt{\sum_{i=0}^{n} {A_i^2}} \sqrt{\sum_{i=0}^{n} {B_i^2}}} $$
 
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
 
 Where *A* and *B* represents bi-dimensional arrays; the digit drawn by the user and the original digit intended to be the expected figure, these can be placed interchangeably in the formula.
 
