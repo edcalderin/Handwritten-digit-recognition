@@ -11,7 +11,6 @@
 
 * [Problem statement](#problem-statement)
 * [Directory layout](#directory-layout)
-* [Setup](#setup)
 * [Running the app with Docker (Recommended)](#running-the-app-with-docker-recommended)
 * [Running the app manually](#running-the-app-manually)
 * [Checkpoints](#checkpoints)
@@ -36,8 +35,9 @@ Brief problem statement
 
 ## Running the app with Docker (Recommended)
 
-1. Run `docker build -t digit-recognition .` 
-2. `docker run -it --rm -p 8501:8501 digit-recognition`
+1. `git clone https://github.com/edcalderin/Handwritten-digit-recognition.git` 
+2. `docker build -t digit-recognition .` 
+3. `docker run -it --rm -p 8501:8501 digit-recognition`
 
 Go to `http://localhost:8501`
 
@@ -47,13 +47,15 @@ The output should look like this:
 
 ## Running the app manually
 
-A virtual environment will be needed to run the app manually, run the following commands from root project directory:
+> :memo: You will need **Python 3.12** installed on your system in order to reproduce this app manually.
+Run the following commands from root project directory:
 
-1. `pip install poetry`
-2. `poetry shell`
-3. `poetry install`
-7. `streamlit run src/app.py`
-8. Go to `http://localhost:8501`
+1. `git clone https://github.com/edcalderin/Handwritten-digit-recognition.git`
+2. `pip install poetry`
+3. `poetry shell`
+4. `poetry install`
+5. `streamlit run src/app.py`
+6. Go to `http://localhost:8501`
 
 ## Checkpoints
 
@@ -62,8 +64,8 @@ A virtual environment will be needed to run the app manually, run the following 
 - [x] Dependency and enviroment management
 - [x] Containerization (Docker with multi-stage)
 - [x] Linter
-- [x] CI/CD workflow (Linter and Unit tests)
 - [x] Unit tests
+- [x] CI/CD workflow (Linter and Unit tests)
 - [ ] Cloud deployment
 
 ## References
