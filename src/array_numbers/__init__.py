@@ -1,13 +1,13 @@
-from .zero import zero
-from .one import one
-from .two import two
-from .three import three
-from .four import four
-from .five import five
-from .six import six
-from .seven import seven
 from .eight import eight
+from .five import five
+from .four import four
 from .nine import nine
+from .one import one
+from .seven import seven
+from .six import six
+from .three import three
+from .two import two
+from .zero import zero
 
 numbers_dict = {
     0: zero,
