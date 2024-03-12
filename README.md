@@ -32,7 +32,7 @@ Where *A* and *B* represents bi-dimensional arrays, denoting the digit drawn by 
 
 I have designed a minimal yet functional Streamlit application to showcase this algorithm: Users select a number from a dropdown menu and then proceed to draw the selected number. The result will appear after press the `Compare` button. Additionally, I have categorized the results into three groups based on the score: **Excellent** (`score > 0.7`), **Good** (`score > 0.4`) and **Incorrect** (`score < 0.4`).
 
-The animation below illustrates on how the application works:
+The animation below illustrates how the application works:
 
 ![Alt text](./images/app.gif)
 
