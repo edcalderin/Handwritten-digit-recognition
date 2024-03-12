@@ -36,7 +36,7 @@ The animation below illustrates how the application works:
 
 ![Alt text](./images/app.gif)
 
-To sum it up, the applications of the cosine similarity extend beyond simple array comparisions, it is predominantly used in Large Languaje Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
+To sum it up, the applications of the cosine similarity extend beyond simple array comparisons, it is predominantly used in Large Language Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
 
 ## Directory layout
 
