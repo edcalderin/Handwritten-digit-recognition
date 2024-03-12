@@ -1,9 +1,10 @@
 from pathlib import Path
 
 import streamlit as st
-from src.operations import Operations
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
+
+from src.operations import Operations
 
 
 def main():
