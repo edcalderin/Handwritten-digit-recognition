@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import streamlit as st
-from operations import Operations
+from src.operations import Operations
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
