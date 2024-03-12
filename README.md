@@ -30,11 +30,13 @@ $$
 
 Where *A* and *B* represents bi-dimensional arrays, denoting the digit drawn by the user and the original digit intended to be the expected figure, respectively. Though these can interchanged in the formula.
 
-I have designed a minimal yet functional Streamlit application to showcase this algorithm: Users select a number from a dropdown menu and then proceed to draw the selected number. The result will appear after press the `Compare` button. Additionally, I have categorized the results into three groups based on the score: **Excellent** (`score > 0.7`), **Good** (`score > 0.4`) and **Incorrect** (`score < 0.4`) 
+I have designed a minimal yet functional Streamlit application to showcase this algorithm: Users select a number from a dropdown menu and then proceed to draw the selected number. The result will appear after press the `Compare` button. Additionally, I have categorized the results into three groups based on the score: **Excellent** (`score > 0.7`), **Good** (`score > 0.4`) and **Incorrect** (`score < 0.4`).
+
+The animation below illustrates on how the application works:
 
 ![Alt text](./images/app.gif)
 
-The applications of the cosine similarity extend beyond simple array comparisions, it is predominantly used in Large Languaje Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
+To sum it up, the applications of the cosine similarity extend beyond simple array comparisions, it is predominantly used in Large Languaje Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
 
 ## Directory layout
 
