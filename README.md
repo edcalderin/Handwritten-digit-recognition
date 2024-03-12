@@ -32,11 +32,12 @@ Where *A* and *B* represents bi-dimensional arrays, denoting the digit drawn by 
 
 I have designed a minimal yet functional Streamlit application to showcase this algorithm: Users select a number from a dropdown menu and then proceed to draw the selected number. The result will appear after press the `Compare` button. Additionally, I have categorized the results into three groups based on the score: **Excellent** (`score > 0.7`), **Good** (`score > 0.4`) and **Incorrect** (`score < 0.4`) 
 
-![Alt text](./images/code_gif.gif)
+![Alt text](./images/app_working.gif)
 
 The applications of the cosine similarity extend beyond simple array comparisions, it is predominantly used in Large Languaje Models, Recommender Systems, Information Retrieval and various other domains. Therefore, you can leverage its potential to develop a wide range of projects.
 
 ## Directory layout
+
 
 ```
 .
