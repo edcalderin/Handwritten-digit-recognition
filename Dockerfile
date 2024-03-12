@@ -19,7 +19,7 @@ COPY --from=builder /app .
 ENV PATH="/app/.venv/bin:$PATH"
 
 COPY src ./src
-COPY images/numbers ./images/numbers
+COPY images/digits ./images/digits
 
 EXPOSE 8501
 
