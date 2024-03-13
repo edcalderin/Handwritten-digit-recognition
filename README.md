@@ -17,7 +17,7 @@
 
 ## Problem statement
 
-In this project, I introduce a different and naive approach to the popular problem of handwritten digit recognition, widely used in Machine Learning and Convolutional Neural Network by enthusiasts who start in this field. Maybe it is unnecesary to describe the idea behind as you have probably read, seen or implemented this kind of problems on your own, but in this opportunity I decided go through an algebraic solution to identify digits written by hand making usage of the cosine similarity metric [(See on references)](#references). 
+In this project, I introduce a different and naive approach to the popular problem of handwritten digit recognition, widely used in Machine Learning and Convolutional Neural Network by enthusiasts who start in this field. Maybe it is unnecessary to describe the idea behind as you have probably read, seen or implemented this kind of problems on your own, but in this opportunity I decided go through an algebraic solution to identify digits written by hand making usage of the cosine similarity metric [(See on references)](#references). 
 
 The metric is calculated by measuring the similarity between two vectors and corresponds to the following formula:
 
