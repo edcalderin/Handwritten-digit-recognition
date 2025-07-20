@@ -55,7 +55,7 @@ To sum it up, the applications of the cosine similarity extend beyond simple arr
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/edcalderin/Handwritten-digit-recognition.git
+git clone https://github.com/edcalderin/handwritten-digit-recognition.git
 ```
 2. Start Docker Desktop
 
